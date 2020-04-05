@@ -1,0 +1,37 @@
+<section>
+    <div class="bgc-white p-20 bd">
+        <h6 class="c-grey-900">Add product</h6>
+        <div class="mT-30">
+            <form class="form-row" method="post" action="/manage/product-upload" enctype="multipart/form-data">
+                <div class="form-group row col-12">
+                    <label for="name" class="col-sm-2 col-form-label">Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+                    </div>
+                </div>
+                <div class="form-group row col-12">
+                    <label for="quantity" class="col-sm-2 col-form-label">Quantity</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="quantity" name="quantity" placeholder="Quantity">
+                    </div>
+                </div>
+                <div class="form-group row col-12">
+                    <label for="description" class="col-sm-2 col-form-label">Description</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" id="description" name="description" placeholder="Description"></textarea>
+                    </div>
+                </div>
+                <div class="form-group row col-12">
+                    <label for="images" class="col-sm-2 col-form-label">Images</label>
+                    <div class="col-sm-10">
+                        <input type="file" multiple accept="image/jpeg, image/png" class="form-control" id="images" name="images" placeholder="Images">
+                    </div>
+                </div>
+                <div class="form-group col-12">
+                    <button type="submit" class="btn btn-dark">Upload</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</section>
