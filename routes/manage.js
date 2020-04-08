@@ -1,4 +1,5 @@
-const fs = require('fs');
+const path = require('path');
+const ImageSaver = require('../services/ImageSaver');
 const formidable = require('formidable');
 const express = require('express');
 const Router = express.Router;
@@ -7,20 +8,21 @@ const manage = Router();
 
 manage.get('/', (req, res) => {
     res.render('manage', {
-        title: 'Irupe home page',
+        title: 'Manager of products',
         layout: 'index'
     })
 });
 
 manage.post('/product-upload', (req, res) => {
-    const { body } = req;
-    console.log(body);
-    
+    const imageSaver = new ImageSaver(path.resolve('.', 'src/photos'));
     const form = formidable({ multiples: true });
     
     form.parse(req, (err, fields, files) => {
-        
-        console.log(fields, files)
+        const { imageHigh, imageLow } = files;
+        imageSaver.save(imageHigh);
+        imageLow && imageSaver.save(imageLow);
+    
+    
         res.redirect('/');
     });
     
