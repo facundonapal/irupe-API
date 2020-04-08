@@ -15,7 +15,7 @@ manage.get('/', (req, res) => {
 
 manage.post('/product-upload', (req, res) => {
     const imageSaver = new ImageSaver(path.resolve('.', 'src/photos'));
-    const form = formidable({ multiples: true });
+    const form = formidable();
     
     form.parse(req, (err, fields, files) => {
         const { imageHigh, imageLow } = files;

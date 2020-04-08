@@ -2,4 +2,6 @@
 .DS_STORE
 node_modules
 src/**/*.png
+src/**/*.jpg
+src/**/*.jpeg
 
